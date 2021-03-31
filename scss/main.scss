@@ -4,3 +4,172 @@
 @import 'base/variables';
 @import 'base/fonts';
 @import 'base/typography';
+
+.container {
+   width: 100%;
+   max-width: 1230px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+svg {
+   width: 100%;
+   height: 100%;
+}
+
+// header block
+.header {
+   padding: 6px 0;
+   background-color: $blue;
+   @media screen and (max-width: 768px) {
+      padding: 10px 0;
+   }
+
+   .content {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      // justify-content: center;
+      // justify-content: space-between;
+
+      @media screen and (max-width: 1023px) {
+         flex-wrap: wrap;
+      }
+      @media screen and (max-width: 768px) {
+         justify-content: space-between;
+      }
+   }
+}
+
+.list {
+   display: flex;
+}
+
+.search-block {
+   margin-right: 20px;
+   border-radius: 5px;
+   flex-grow: 1;
+   order: 3;
+   @media screen and (max-width: 768px) {
+      margin-top: 10px;
+      margin-right: 0;
+   }
+
+   .input-search {
+      width: 100%;
+      max-width: 336px;
+      border-radius: 5px;
+      padding: 8px 35px 8px 15px;
+      background-image: url('../images/search.svg');
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 15px;
+      @media screen and (max-width: 768px) {
+         max-width: 100%;
+      }
+      &::placeholder {
+         color: $gray;
+      }
+   }
+}
+
+.menu {
+   order: 2;
+   .list {
+      align-items: center;
+      .item {
+         display: flex;
+         align-items: center;
+         margin: 0 10px;
+         
+         &::after {
+            content: '';
+            display: inline-block;
+            width: 2px;
+            height: 18px;
+            background-color: #fff;
+
+         }
+
+         &:last-child {
+            &::after {
+               @media screen and (max-width: 768px) {
+                  display: none;
+               }
+            }
+         }
+
+         .link {
+            display: flex;
+            align-items: center;
+            color: $white;
+            margin-right: 20px;
+            span {
+               display: inline-block;
+            }
+         }
+
+      }
+   }
+
+   .icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+   }
+   .user-icon {
+      margin-right: 10px;
+
+      .user-svg{
+         fill: #fff;
+      }
+   }
+}
+
+.social-menu {
+   order: 1;
+   .icon {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+   }
+
+   .list {
+      display: flex;
+      align-items: center;
+      .item {
+         margin: 0 8px;
+      }
+   }
+}
+
+.icon-box {
+   position: relative;
+}
+
+.link {
+   &.active {
+      .icon {
+         svg {
+            fill: $white;
+         }
+      }
+      span {
+         position: absolute;
+         top: -5px;
+         right: -5px;
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         border-radius: 50%;
+         border: 1px solid $white;
+         background-color: $red;
+         text-align: center;
+         &::after {
+            content: '1';
+            display: inline-block;
+            color: $white;
+         }
+      }
+   }
+}
