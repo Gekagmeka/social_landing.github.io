@@ -480,15 +480,43 @@ svg {
 }
 
 .main {
-  height: 1000px;
   background-color: #eee;
-  margin-top: 60px;
-  border-top: 5px solid #000;
+  padding-top: 80px;
 }
 
 @media screen and (max-width: 768px) {
   .main {
-    margin-top: 120px;
+    padding-top: 120px;
   }
+}
+
+.menu-sidebar {
+  width: 192px;
+}
+
+.user-block {
+  margin-bottom: 20px;
+}
+
+.user-block .icon {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  margin-right: 8px;
+  vertical-align: -15px;
+}
+
+.user-block .icon svg {
+  fill: #999;
+}
+
+.nav-group .icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.nav-group .icon svg {
+  fill: #4faaff;
 }
 /*# sourceMappingURL=main.css.map */

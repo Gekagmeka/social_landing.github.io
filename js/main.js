@@ -2,7 +2,7 @@ let burgerMenu = document.querySelector('.burger-menu');
 let closeCross = document.querySelector('.close-link');
 let mobileMenu = document.querySelector('.menu');
 let closedBody = document.querySelector('body');
-let headerLinks = document.querySelector('.link');
+let headerLinks = document.querySelectorAll('.menu .link');
 
 burgerMenu.onclick = function() {
    mobileMenu.classList.add('active');
@@ -17,14 +17,14 @@ closeCross.onclick = function() {
     // e.preventDefault();
 }
 
-//(don't work - because need olny one unick class or id - then it will work)
-headerLinks.onclick = function() {
-   mobileMenu.classList.remove('active');
-   closedBody.classList.remove('close');
-   return false; //because after closing burger-menu, we are transfered to the start of the page
-   //or
-    // e.preventDefault();
-}
+//(don't work - because need olny one unique class or id of each of them - then it will work)
+// headerLinks.onclick = function() {
+//    mobileMenu.classList.remove('active');
+//    closedBody.classList.remove('close');
+//    return false; //because after closing burger-menu, we are transfered to the start of the page
+//    //or
+//     // e.preventDefault();
+// }
 
 
 

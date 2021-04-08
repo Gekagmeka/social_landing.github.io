@@ -353,13 +353,44 @@ svg {
    }
 }
 
-//main
+
+
+
+// main
 .main {
-   height: 1000px;
    background-color: #eee;
-   margin-top: 60px;
-   border-top: 5px solid #000;
+   padding-top: 80px;
    @media screen and (max-width: 768px) {
-      margin-top: 120px;
+      padding-top: 120px;
+   }
+}
+
+//left sidebar (menu-sidebar)
+.menu-sidebar {
+   width: 192px;
+}
+
+.user-block {
+   margin-bottom: 20px;
+   .icon {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      margin-right: 8px;
+      vertical-align: -15px;
+      svg {
+         fill: $gray;
+      }
+   }
+}
+
+.nav-group {
+   .icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+         svg {
+            fill: $blue-light;
+         }
    }
 }
