@@ -23,6 +23,17 @@ svg {
    height: 100%;
 }
 
+.link {
+   display: flex;
+   align-items: center;
+   color: $hard-grey;
+}
+
+.icon {
+   display: inline-block;
+   margin-right: 10px;
+}
+
 // header block
 .header {
    position: fixed;
@@ -272,8 +283,6 @@ svg {
          }
 
          .link {
-            display: flex;
-            align-items: center;
             color: $white;
             margin-right: 20px;
             @media screen and (max-width: 600px) {
@@ -290,7 +299,6 @@ svg {
    }
 
    .icon {
-      display: inline-block;
       width: 40px;
       height: 40px;
    }
@@ -298,7 +306,7 @@ svg {
       margin-right: 10px;
 
       .user-svg{
-         fill: #fff;
+         fill: $white;
       }
    }
 }
@@ -308,9 +316,9 @@ svg {
    z-index: 7;
    order: 1;
    .icon {
-      display: inline-block;
       width: 30px;
       height: 30px;
+      margin-right: 0;
    }
 
    .list {
@@ -318,6 +326,32 @@ svg {
       align-items: center;
       .item {
          margin: 0 8px;
+         .link {
+            &.active {
+               .icon {
+                  svg {
+                     fill: $white;
+                  }
+               }
+               span {
+                  position: absolute;
+                  top: -5px;
+                  right: -5px;
+                  display: inline-block;
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 50%;
+                  border: 1px solid $white;
+                  background-color: $red;
+                  text-align: center;
+                  &::after {
+                     content: '1';
+                     display: inline-block;
+                     color: $white;
+                  }
+               }
+            }
+         }
       }
    }
 }
@@ -326,39 +360,14 @@ svg {
    position: relative;
 }
 
-.link {
-   &.active {
-      .icon {
-         svg {
-            fill: $white;
-         }
-      }
-      span {
-         position: absolute;
-         top: -5px;
-         right: -5px;
-         display: inline-block;
-         width: 20px;
-         height: 20px;
-         border-radius: 50%;
-         border: 1px solid $white;
-         background-color: $red;
-         text-align: center;
-         &::after {
-            content: '1';
-            display: inline-block;
-            color: $white;
-         }
-      }
-   }
-}
+
 
 
 
 
 // main
 .main {
-   background-color: #eee;
+   background-color: $main-grey;
    padding-top: 80px;
    @media screen and (max-width: 768px) {
       padding-top: 120px;
@@ -371,9 +380,9 @@ svg {
 }
 
 .user-block {
+   padding-left: 12px;
    margin-bottom: 20px;
    .icon {
-      display: inline-block;
       width: 44px;
       height: 44px;
       margin-right: 8px;
@@ -384,13 +393,50 @@ svg {
    }
 }
 
+.icon {
+   width: 24px;
+   height: 24px;
+      svg {
+         fill: $blue-light;
+      }
+}
+
+// nav-group
 .nav-group {
-   .icon {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-         svg {
-            fill: $blue-light;
+   padding-bottom: 24px;
+   .sub-title {
+      padding-left: 12px;
+      padding-bottom: 10px;
+   }
+   .list {
+      flex-direction: column;
+      .link {
+         position: relative;
+         padding: 8px 12px;
+         border-radius: 5px;
+         @media screen and (max-width: 768px) {
+            position: static;
          }
+         &::after {
+            content: '...';
+            position: absolute;
+            top: 4px;
+            right: 10px;
+            font-size: 20px;
+            display: none;
+         }
+         @media screen and (min-width: 769px) {
+            &:hover {
+               background-color: $white;
+               &::after {
+                  display: inline-block;
+               }
+               span {
+                  font-weight: 700;
+               }
+            }
+         }
+      }
    }
 }
+
