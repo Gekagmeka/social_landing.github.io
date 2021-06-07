@@ -3,6 +3,8 @@ let closeCross = document.querySelector('.close-link');
 let mobileMenu = document.querySelector('.menu');
 let closedBody = document.querySelector('body');
 let headerLinks = document.querySelectorAll('.menu .link');
+let seeMore = document.querySelector('.see-more');
+let navGroup = document.querySelector('.nav-group');
 
 burgerMenu.onclick = function() {
    mobileMenu.classList.add('active');
@@ -16,6 +18,10 @@ closeCross.onclick = function() {
    //or
     // e.preventDefault();
 }
+
+
+
+
 
 //(don't work - because need olny one unique class or id of each of them - then it will work)
 // headerLinks.onclick = function() {
@@ -44,3 +50,10 @@ closeCross.onclick = function() {
 //    else {
 //       closedBody.classList.remove('close');
 //    }
+
+
+//see-more block
+$(".see-more").on('click', function() {
+   $(".see-more").toggleClass("active");
+   $(".see-more + .nav-group").toggleClass("hide-block");
+});
