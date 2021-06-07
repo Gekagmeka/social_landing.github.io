@@ -590,9 +590,9 @@ svg {
   content: '';
   display: inline-block;
   position: absolute;
-  top: 2px;
-  left: 22px;
-  border-right: 7px solid #999;
+  top: 1px;
+  left: 23px;
+  border-left: 7px solid #999;
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
   -webkit-transition: all 0.3s ease-in;
@@ -600,8 +600,8 @@ svg {
 }
 
 .see-more.active::before {
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .hide-block {

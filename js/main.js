@@ -53,7 +53,8 @@ closeCross.onclick = function() {
 
 
 //see-more block
-$(".see-more").on('click', function() {
+$(".see-more").on('click', function(e) {
    $(".see-more").toggleClass("active");
    $(".see-more + .nav-group").toggleClass("hide-block");
+   e.preventDefault(); // to avoid transfering to the start after press see more link
 });
