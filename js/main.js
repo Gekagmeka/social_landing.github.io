@@ -19,7 +19,22 @@ closeCross.onclick = function() {
     // e.preventDefault();
 }
 
+//see-more block js
+seeMore.onclick = function(e) {
+   seeMore.classList.toggle('active');
+   e.preventDefault();
+   seeMore.nextElementSibling.classList.toggle('hide-block');
+   console.log(seeMore.nextElementSibling);
+}
 
+//see-more block jQuery
+// $(".see-more").on('click', function(e) {
+//    $(".see-more").toggleClass("active");
+//    $(".see-more + .nav-group").toggleClass("hide-block");
+// or
+//    $(".see-more").next().toggleClass("hide-block");
+//    e.preventDefault(); // to avoid transfering to the start after press see more link
+// });
 
 
 
@@ -50,11 +65,3 @@ closeCross.onclick = function() {
 //    else {
 //       closedBody.classList.remove('close');
 //    }
-
-
-//see-more block
-$(".see-more").on('click', function(e) {
-   $(".see-more").toggleClass("active");
-   $(".see-more + .nav-group").toggleClass("hide-block");
-   e.preventDefault(); // to avoid transfering to the start after press see more link
-});
