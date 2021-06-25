@@ -498,32 +498,45 @@ svg {
   }
 }
 
-.menu-sidebar {
-  width: 192px;
+.main .main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 -10px;
 }
 
-.user-block {
+.menu-sidebar {
+  width: 20%;
+  min-width: 192px;
+  padding: 0 10px;
+}
+
+.menu-sidebar .user-block {
   padding-left: 12px;
   margin-bottom: 20px;
 }
 
-.user-block .icon {
+.menu-sidebar .user-block .icon {
   width: 44px;
   height: 44px;
   margin-right: 8px;
   vertical-align: -15px;
 }
 
-.user-block .icon svg {
+.menu-sidebar .user-block .icon svg {
   fill: #999;
 }
 
-.icon {
+.menu-sidebar .icon {
   width: 24px;
   height: 24px;
+  margin-right: 10px;
 }
 
-.icon svg {
+.menu-sidebar .icon svg {
   fill: #4faaff;
 }
 
@@ -609,5 +622,112 @@ svg {
   visibility: hidden;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+}
+
+.central-part {
+  width: 48%;
+  min-width: 500px;
+  padding: 0 10px;
+}
+
+.create-block {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.create-title {
+  padding: 10px 15px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.create-text {
+  padding: 15px;
+}
+
+.create-text .create-content {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.create-text .create-content span {
+  color: #333;
+}
+
+.create-text .create-share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px 0 0;
+}
+
+.create-text .create-share .create-attach {
+  padding: 8px 15px;
+  margin-right: 8px;
+  background-color: #e7e7e7;
+  border-radius: 20px;
+  border: 1px solid #e7e7e7;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.create-text .create-share .create-attach:hover {
+  background-color: transparent;
+}
+
+.create-text .create-share .create-attach span {
+  position: relative;
+  font-size: 13px;
+  color: #333;
+}
+
+.create-text .create-share .create-attach:last-child {
+  border-radius: 50%;
+}
+
+.create-text .create-share .create-attach:last-child span::before {
+  content: '...';
+  position: absolute;
+  top: -16px;
+  left: -8px;
+  font-size: 20px;
+}
+
+.create-text .create-share .icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.create-text .create-share .icon svg {
+  fill: #4faaff;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.icon .user-svg {
+  fill: #999;
+}
+
+.block-ico-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info-sidebar {
+  width: 32%;
+  padding: 0 10px;
+  background-color: #f00;
 }
 /*# sourceMappingURL=main.css.map */

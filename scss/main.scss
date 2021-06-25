@@ -372,34 +372,44 @@ svg {
    @media screen and (max-width: 768px) {
       padding-top: 120px;
    }
+   .main-content {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 -10px;
+   }
 }
 
 //left sidebar (menu-sidebar)
 .menu-sidebar {
-   width: 192px;
-}
+   width: 20%;
+   min-width: 192px;
+   padding: 0 10px;
 
-.user-block {
-   padding-left: 12px;
-   margin-bottom: 20px;
-   .icon {
-      width: 44px;
-      height: 44px;
-      margin-right: 8px;
-      vertical-align: -15px;
-      svg {
-         fill: $gray;
+   .user-block {
+      padding-left: 12px;
+      margin-bottom: 20px;
+      .icon {
+         width: 44px;
+         height: 44px;
+         margin-right: 8px;
+         vertical-align: -15px;
+         svg {
+            fill: $gray;
+         }
       }
+   }
+   
+   .icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+         svg {
+            fill: $blue-light;
+         }
    }
 }
 
-.icon {
-   width: 24px;
-   height: 24px;
-      svg {
-         fill: $blue-light;
-      }
-}
+
 
 // nav-group
 .nav-group {
@@ -470,4 +480,96 @@ svg {
    opacity: 0;
    visibility: hidden;
    transition: all 0.3s ease-in;
+}
+
+//central-part
+.central-part {
+   width: 48%;
+   min-width: 500px;
+   padding: 0 10px;
+}
+.create-block {
+   border: 1px solid rgb(221, 221, 221);
+   border-radius: 5px;
+   overflow: hidden;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.create-title {
+   padding: 10px 15px;
+   border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.create-text {
+   padding: 15px;
+   .create-content {
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgb(221, 221, 221);
+      span {
+         color: #333;
+      }
+   }
+   .create-share {
+      display: flex;
+      padding: 15px 0 0;
+      .create-attach {
+         padding: 8px 15px;
+         margin-right: 8px;
+         background-color: rgb(231, 231, 231);
+         border-radius: 20px;
+         border: 1px solid rgb(231, 231, 231);
+         overflow: hidden;
+         transition: all 0.2s ease-in;
+         &:hover {
+            background-color: transparent;
+         }
+         span {
+            position: relative;
+            font-size: 13px;
+            color: #333;
+         }
+         &:last-child {
+            border-radius: 50%;
+            span {
+               &::before {
+                  content: '...';
+                  position: absolute;
+                  top: -16px;
+                  left: -8px;
+                  font-size: 20px;
+               }
+            }
+         }
+      }
+      .icon {
+         width: 16px;
+         height: 16px;
+         margin-right: 8px;
+         svg {
+            fill: #4faaff;
+         }
+      }
+   }
+}
+
+.icon {
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+      .user-svg {
+         fill: #999;
+      }
+   }
+
+.block-ico-text {
+   display: flex;
+   align-items: center;
+}
+
+
+//sidebar
+.info-sidebar {
+   width: 32%;
+   padding: 0 10px;
+   background-color: #f00;
 }
