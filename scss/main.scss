@@ -493,6 +493,7 @@ svg {
    border-radius: 5px;
    overflow: hidden;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   margin-bottom: 20px;
 }
 
 .create-title {
@@ -515,9 +516,9 @@ svg {
       .create-attach {
          padding: 8px 15px;
          margin-right: 8px;
-         background-color: rgb(231, 231, 231);
+         background-color: rgb(222, 222, 222);
          border-radius: 20px;
-         border: 1px solid rgb(231, 231, 231);
+         border: 1px solid rgb(222, 222, 222);
          overflow: hidden;
          transition: all 0.2s ease-in;
          &:hover {
@@ -564,6 +565,69 @@ svg {
 .block-ico-text {
    display: flex;
    align-items: center;
+}
+
+.post {
+   border: 1px solid rgb(221, 221, 221);
+   border-radius: 5px;
+   overflow: hidden;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.post-wrapper {
+   padding: 15px;
+   .block-ico-text {
+      padding-bottom: 20px;
+   }
+   .post-text {
+      font-size: 14px;
+      line-height: 20px;
+      color: #333;
+      padding-bottom: 20px;
+      &:last-child {
+         padding-bottom: 10px;
+      }
+      a {
+         color: #4faaff;
+      }
+   }
+}
+
+.post-credentials {
+   .author-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #4594df;
+      padding-bottom: 5px;
+   }
+}
+
+.time-info {
+   display: flex;
+   align-items: center;
+   .time-left {
+      display: inline-block;
+      font-size: 13px;
+      color: #999;
+      margin-right: 10px;
+      &::after {
+         content: '';
+         display: inline-block;
+         width: 4px;
+         height: 4px;
+         border-radius: 50%;
+         vertical-align: middle;
+         margin-left: 10px;
+         background-color: #999;
+      }
+   }
+   .icon {
+      width: 15px;
+      height: 15px;
+      margin-right: 0;
+      svg {
+         fill: #999;
+      }
+   }
 }
 
 

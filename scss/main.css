@@ -636,6 +636,7 @@ svg {
   overflow: hidden;
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
 }
 
 .create-title {
@@ -666,9 +667,9 @@ svg {
 .create-text .create-share .create-attach {
   padding: 8px 15px;
   margin-right: 8px;
-  background-color: #e7e7e7;
+  background-color: #dedede;
   border-radius: 20px;
-  border: 1px solid #e7e7e7;
+  border: 1px solid #dedede;
   overflow: hidden;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
@@ -723,6 +724,81 @@ svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.post {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.post-wrapper {
+  padding: 15px;
+}
+
+.post-wrapper .block-ico-text {
+  padding-bottom: 20px;
+}
+
+.post-wrapper .post-text {
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+  padding-bottom: 20px;
+}
+
+.post-wrapper .post-text:last-child {
+  padding-bottom: 10px;
+}
+
+.post-wrapper .post-text a {
+  color: #4faaff;
+}
+
+.post-credentials .author-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4594df;
+  padding-bottom: 5px;
+}
+
+.time-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.time-info .time-left {
+  display: inline-block;
+  font-size: 13px;
+  color: #999;
+  margin-right: 10px;
+}
+
+.time-info .time-left::after {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-left: 10px;
+  background-color: #999;
+}
+
+.time-info .icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 0;
+}
+
+.time-info .icon svg {
+  fill: #999;
 }
 
 .info-sidebar {
