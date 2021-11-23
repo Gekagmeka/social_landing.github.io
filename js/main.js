@@ -5,6 +5,11 @@ let closedBody = document.querySelector('body');
 let headerLinks = document.querySelectorAll('.menu .link');
 let seeMore = document.querySelector('.see-more');
 let navGroup = document.querySelector('.nav-group');
+//let moreBtn = document.querySelector('.more-btn');
+let moreBtnAll = document.getElementsByClassName('more-btn');
+
+//will be found only the first element with this class
+let moreBtnShareList = document.querySelector('.more-btn + .share-list');
 
 burgerMenu.onclick = function() {
    mobileMenu.classList.add('active');
@@ -27,6 +32,27 @@ seeMore.onclick = function(e) {
    console.log(seeMore.nextElementSibling);
 }
 
+// moreBtn.onclick = function(e) {
+//    //document.addEventListener('click',e => console.log(e.target))
+//    moreBtnShareList.classList.toggle('active');
+//    e.preventDefault();
+// }
+
+//added  Listener to each mareBtnAll
+for (var i = 0; i < moreBtnAll.length; i++) {
+   moreBtnAll[i].addEventListener('click', selectOptions);
+}
+//namely this - pushed button from all of moreBtnAll
+function selectOptions() {
+   this.classList.toggle('active');// this в данном случае будет указывать на кликнутый элемент.
+   console.log(this);
+   // moreBtnAll[i].classList.toggle('active');
+}
+
+// document.addEventListener('click', function(){
+//    moreBtnAll[i].classList.toggle('active');
+//    console.log(this);
+// });
 //see-more block jQuery
 // $(".see-more").on('click', function(e) {
 //    $(".see-more").toggleClass("active");

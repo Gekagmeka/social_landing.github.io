@@ -40,7 +40,7 @@ svg {
    top: 0;
    left: 0;
    width: 100%;
-   // z-index: 10;
+   z-index: 1;
 
    &::before {
       content: '';
@@ -196,7 +196,7 @@ svg {
       }
       // .menu-wrapper {
       //    @media screen and (max-width: 600px) {
-            
+
       //    }
       // }
    }
@@ -398,7 +398,7 @@ svg {
          }
       }
    }
-   
+
    .icon {
       width: 24px;
       height: 24px;
@@ -507,6 +507,7 @@ svg {
 
 .create-text {
    padding: 15px;
+   background-color: $white;
    .create-content {
       padding-bottom: 15px;
       border-bottom: 1px solid rgb(221, 221, 221);
@@ -536,6 +537,7 @@ svg {
             color: #333;
          }
          &:last-child {
+            width: 34px;
             border-radius: 50%;
             span {
                &::before {
@@ -574,15 +576,80 @@ svg {
 }
 
 .post {
-   border: 1px solid rgb(221, 221, 221);
-   border-radius: 5px;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-   margin-bottom: 20px;
+   @extend .create-block;
+   background-color: $white;
+   overflow: visible;
 }
 .post-wrapper {
    padding: 15px;
    .block-ico-text {
       padding-bottom: 20px;
+      .more-info {
+         position: relative;
+         align-self: flex-start;
+         margin-top: 10px;
+         margin-left: auto;
+         .more-btn {
+            display: flex;
+            &:hover {
+               cursor: pointer;
+            }
+            &.active {
+               & + .share-list {
+                  visibility: visible;
+                  opacity: 1;
+               }
+            }
+            .more-component {
+               display: inline-block;
+               width: 3px;
+               height: 3px;
+               margin: 1px 2px;
+               border-radius: 50%;
+               background-color: $gray;
+            }
+         }
+         .share-list {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            margin-top: 10px;
+            min-width: 200px;
+            visibility: hidden;
+            opacity: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 5px 7px rgba( 0, 0, 0, 0.2);
+            transition: all 0.2s ease-in;
+               .share-item {
+                  a {
+                     position: relative;
+                     display: block;
+                     padding: 5px 15px;
+                     font-size: 14px;
+                     line-height: 1.5;
+                     color: #333;
+                     transition: all 0.2s ease-in;
+                     z-index: 2;
+                     &:hover {
+                        background-color: #eee;
+                     }
+                  }
+               }
+            &::after {
+               content: '';
+               width: 8px;
+               height: 8px;
+               position: absolute;
+               top: -5px;
+               left: 7px;
+               background-color: #fff;
+               border-left: 1px solid #ccc;
+               border-top: 1px solid #ccc;
+               transform: rotate(45deg);
+            }
+         }
+      }
    }
    .post-text {
       font-size: 14px;
@@ -617,7 +684,6 @@ svg {
                position: absolute;
                top: -185px;
                left: -20px;
-               border-radius: 5px;
                background-color: #fff;
                border: 1px solid #ccc;
                min-width: 230px;
@@ -652,7 +718,7 @@ svg {
                }
             }
          }
-         
+
          &:hover {
             cursor: pointer;
             .icon {
@@ -703,7 +769,7 @@ svg {
    .author-name {
       font-size: 18px;
       font-weight: 700;
-      color: #4594df;
+      color: $blue-light;
       padding-bottom: 5px;
    }
 }
@@ -742,5 +808,39 @@ svg {
 .info-sidebar {
    width: 32%;
    padding: 0 10px;
-   background-color: #f00;
+   .stories{
+      padding: 20px;
+      background-color: $white;
+      @extend .create-block;
+   }
+   .stories-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      .clock-icon {
+         margin-right: 5px;
+         svg {
+            fill: $blue-dark;
+         }
+      }
+      .time-left, a {
+         font-size: 14px;
+         color: $blue-light;
+      }
+   }
+   .post-stories {
+      .time-left {
+         color: $gray;
+         margin-right: 0;
+         &::after {
+            display: none;
+         }
+      }
+      .block-ico-text {
+         margin-bottom: 15px;
+         &:last-child {
+            margin-bottom: 0;
+         }
+      }
+   }
 }

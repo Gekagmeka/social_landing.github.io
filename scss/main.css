@@ -115,6 +115,7 @@ svg {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .header::before {
@@ -546,7 +547,7 @@ svg {
 }
 
 .menu-sidebar .icon svg {
-  fill: #4faaff;
+  fill: #4594df;
 }
 
 .nav-group {
@@ -605,7 +606,7 @@ svg {
   display: inline-block;
   padding-left: 46px;
   margin-bottom: 15px;
-  color: #4faaff;
+  color: #4594df;
 }
 
 .see-more::before {
@@ -639,7 +640,7 @@ svg {
   padding: 0 10px;
 }
 
-.create-block {
+.create-block, .post, .info-sidebar .stories {
   border: 1px solid #dddddd;
   border-radius: 5px;
   overflow: hidden;
@@ -661,6 +662,7 @@ svg {
 
 .create-text {
   padding: 15px;
+  background-color: #fff;
 }
 
 .create-text .create-content {
@@ -702,6 +704,7 @@ svg {
 }
 
 .create-text .create-share .create-attach:last-child {
+  width: 34px;
   border-radius: 50%;
 }
 
@@ -743,11 +746,8 @@ svg {
 }
 
 .post {
-  border: 1px solid #dddddd;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
+  background-color: #fff;
+  overflow: visible;
 }
 
 .post-wrapper {
@@ -756,6 +756,84 @@ svg {
 
 .post-wrapper .block-ico-text {
   padding-bottom: 20px;
+}
+
+.post-wrapper .block-ico-text .more-info {
+  position: relative;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-top: 10px;
+  margin-left: auto;
+}
+
+.post-wrapper .block-ico-text .more-info .more-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.post-wrapper .block-ico-text .more-info .more-btn:hover {
+  cursor: pointer;
+}
+
+.post-wrapper .block-ico-text .more-info .more-btn.active + .share-list {
+  visibility: visible;
+  opacity: 1;
+}
+
+.post-wrapper .block-ico-text .more-info .more-btn .more-component {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin: 1px 2px;
+  border-radius: 50%;
+  background-color: #999;
+}
+
+.post-wrapper .block-ico-text .more-info .share-list {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  margin-top: 10px;
+  min-width: 200px;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.post-wrapper .block-ico-text .more-info .share-list .share-item a {
+  position: relative;
+  display: block;
+  padding: 5px 15px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  z-index: 2;
+}
+
+.post-wrapper .block-ico-text .more-info .share-list .share-item a:hover {
+  background-color: #eee;
+}
+
+.post-wrapper .block-ico-text .more-info .share-list::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: -5px;
+  left: 7px;
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .post-wrapper .post-text {
@@ -803,7 +881,6 @@ svg {
   position: absolute;
   top: -185px;
   left: -20px;
-  border-radius: 5px;
   background-color: #fff;
   border: 1px solid #ccc;
   min-width: 230px;
@@ -942,6 +1019,50 @@ svg {
 .info-sidebar {
   width: 32%;
   padding: 0 10px;
-  background-color: #f00;
+}
+
+.info-sidebar .stories {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.info-sidebar .stories-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.info-sidebar .stories-header .clock-icon {
+  margin-right: 5px;
+}
+
+.info-sidebar .stories-header .clock-icon svg {
+  fill: #07339b;
+}
+
+.info-sidebar .stories-header .time-left, .info-sidebar .stories-header a {
+  font-size: 14px;
+  color: #4594df;
+}
+
+.info-sidebar .post-stories .time-left {
+  color: #999;
+  margin-right: 0;
+}
+
+.info-sidebar .post-stories .time-left::after {
+  display: none;
+}
+
+.info-sidebar .post-stories .block-ico-text {
+  margin-bottom: 15px;
+}
+
+.info-sidebar .post-stories .block-ico-text:last-child {
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=main.css.map */
