@@ -812,8 +812,17 @@ svg {
       padding: 20px;
       background-color: $white;
       @extend .create-block;
+      &.visible-block {
+         overflow: visible;
+         .stories-header {
+            padding-bottom: 10px;
+            margin-bottom: 0;
+            border-bottom: 1px solid $light-grey;
+         }
+      }
    }
    .stories-header {
+      position: relative;
       display: flex;
       justify-content: space-between;
       margin-bottom: 20px;
@@ -826,6 +835,40 @@ svg {
       .time-left, a {
          font-size: 14px;
          color: $blue-light;
+      }
+      .options-link {
+         &:hover +
+         .options-block {
+            visibility: visible;
+            opacity: 1;
+         }
+      }
+      .options-block {
+         position: absolute;
+         top: -44px;
+         right: -20px;
+         background-color: $black;
+         padding: 8px 5px;
+         border-radius: 5px;
+         visibility: hidden;
+         opacity: 0;
+         transition: all 0.2s ease-in;
+         &::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            transform: translateX(-50%) rotate(45deg);
+            background-color: $black;
+            // transform-origin: center;
+         }
+         p {
+            color: $white;
+            font-size: 13px;
+         }
       }
    }
    .post-stories {
@@ -841,6 +884,85 @@ svg {
          &:last-child {
             margin-bottom: 0;
          }
+      }
+   }
+   .birthday-block {
+      display: flex;
+      align-items: center;
+      .icon {
+         display: inline-block;
+         width: 25px;
+         height: 25px;
+         margin-right: 10px;
+         svg {
+            fill: $blue-light;
+         }
+      }
+      a {
+         color: $blue-light;
+      }
+      span {
+         display: inline-block;
+      }
+   }
+   .stories-content {
+      padding-top: 15px;
+      .block-ico-text {
+         align-items: flex-start;
+         .values {
+            display: inline-block;
+            padding: 1px 3px;
+            background-color: $main-grey;
+            margin-left: 5px;
+            font-size: 11px;
+            color: $gray;
+            border: 1px solid $light-grey;
+         }
+      }
+      .time-info {
+         margin-bottom: 7px;
+         .icon{
+         margin-right: 5px;
+         }
+         svg {
+            fill: $hard-grey;
+         }
+      }
+      .time-left {
+         margin-right: 0;
+         &::after {
+            display: none;
+         }
+      }
+      .buttons-block {
+         padding-top: 20px;
+         padding-bottom: 20px;
+         border-top: 1px solid $light-grey;
+         margin-top: 20px;
+         .button-info {
+            width: 33.3333%;
+            display: inline-block;
+            padding: 12px 10px;
+            border: 2px solid $light-grey;
+            text-align: center;
+            color: $hard-grey;
+            &.active {
+               background-color: $main-grey;
+               border: 2px solid $blue-light;
+               color: $blue-light;
+            }
+         }
+      }
+      .sum-values {
+         text-align: center;
+         font-size: 14px;
+         color: $hard-grey;
+         .all-values {
+            padding-bottom: 10px;
+            font-size: 26px;
+            font-weight: 700;
+         }
+
       }
    }
 }

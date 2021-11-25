@@ -1026,7 +1026,18 @@ svg {
   background-color: #fff;
 }
 
+.info-sidebar .stories.visible-block {
+  overflow: visible;
+}
+
+.info-sidebar .stories.visible-block .stories-header {
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
 .info-sidebar .stories-header {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1049,6 +1060,42 @@ svg {
   color: #4594df;
 }
 
+.info-sidebar .stories-header .options-link:hover + .options-block {
+  visibility: visible;
+  opacity: 1;
+}
+
+.info-sidebar .stories-header .options-block {
+  position: absolute;
+  top: -44px;
+  right: -20px;
+  background-color: #000;
+  padding: 8px 5px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.info-sidebar .stories-header .options-block::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
+  background-color: #000;
+}
+
+.info-sidebar .stories-header .options-block p {
+  color: #fff;
+  font-size: 13px;
+}
+
 .info-sidebar .post-stories .time-left {
   color: #999;
   margin-right: 0;
@@ -1064,5 +1111,107 @@ svg {
 
 .info-sidebar .post-stories .block-ico-text:last-child {
   margin-bottom: 0;
+}
+
+.info-sidebar .birthday-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info-sidebar .birthday-block .icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.info-sidebar .birthday-block .icon svg {
+  fill: #4594df;
+}
+
+.info-sidebar .birthday-block a {
+  color: #4594df;
+}
+
+.info-sidebar .birthday-block span {
+  display: inline-block;
+}
+
+.info-sidebar .stories-content {
+  padding-top: 15px;
+}
+
+.info-sidebar .stories-content .block-ico-text {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.info-sidebar .stories-content .block-ico-text .values {
+  display: inline-block;
+  padding: 1px 3px;
+  background-color: #eee;
+  margin-left: 5px;
+  font-size: 11px;
+  color: #999;
+  border: 1px solid #e0e0e0;
+}
+
+.info-sidebar .stories-content .time-info {
+  margin-bottom: 7px;
+}
+
+.info-sidebar .stories-content .time-info .icon {
+  margin-right: 5px;
+}
+
+.info-sidebar .stories-content .time-info svg {
+  fill: #333;
+}
+
+.info-sidebar .stories-content .time-left {
+  margin-right: 0;
+}
+
+.info-sidebar .stories-content .time-left::after {
+  display: none;
+}
+
+.info-sidebar .stories-content .buttons-block {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 20px;
+}
+
+.info-sidebar .stories-content .buttons-block .button-info {
+  width: 33.3333%;
+  display: inline-block;
+  padding: 12px 10px;
+  border: 2px solid #e0e0e0;
+  text-align: center;
+  color: #333;
+}
+
+.info-sidebar .stories-content .buttons-block .button-info.active {
+  background-color: #eee;
+  border: 2px solid #4594df;
+  color: #4594df;
+}
+
+.info-sidebar .stories-content .sum-values {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.info-sidebar .stories-content .sum-values .all-values {
+  padding-bottom: 10px;
+  font-size: 26px;
+  font-weight: 700;
 }
 /*# sourceMappingURL=main.css.map */
