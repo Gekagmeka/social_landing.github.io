@@ -301,6 +301,8 @@ svg {
    .icon {
       width: 40px;
       height: 40px;
+      min-width: 40px;
+      min-height: 40px;
    }
    .user-icon {
       margin-right: 10px;
@@ -318,6 +320,8 @@ svg {
    .icon {
       width: 30px;
       height: 30px;
+      min-width: 30px;
+      min-height: 30px;
       margin-right: 0;
    }
 
@@ -373,9 +377,16 @@ svg {
       padding-top: 120px;
    }
    .main-content {
+      overflow: hidden; // otherwise it is scroll after adding grid
       display: flex;
       justify-content: space-between;
       margin: 0 -10px;
+      @media screen and (max-width: 1024px) {
+         display: grid;  
+  grid-template-areas: "header header"  
+                       "sidebar content";
+//   grid-template-columns: 30% 70%;
+      }
    }
 }
 
@@ -384,6 +395,17 @@ svg {
    width: 20%;
    min-width: 192px;
    padding: 0 10px;
+   @media screen and (max-width: 1024px) {
+      grid-area: sidebar;
+      width: 100%;
+   }
+   @media screen and (max-width: 480px) {
+      min-width: 170px;
+   }
+   @media screen and (max-width: 375px) {
+      min-width: 140px;
+      padding: 0;
+   }
 
    .user-block {
       padding-left: 12px;
@@ -391,10 +413,24 @@ svg {
       .icon {
          width: 44px;
          height: 44px;
+         min-width: 44px;
+         min-height: 44px;
          margin-right: 8px;
          vertical-align: -15px;
          svg {
             fill: $gray;
+         }
+      }
+      .link {
+         @media screen and (max-width: 480px) {
+            flex-direction: column;
+            align-items: flex-start;
+         }
+         span {
+            @media screen and (max-width: 480px) {
+               vertical-align: top;
+               margin-top: 5px;
+            }
          }
       }
    }
@@ -402,9 +438,17 @@ svg {
    .icon {
       width: 24px;
       height: 24px;
+      min-width: 24px;
+      min-height: 24px;
       margin-right: 10px;
          svg {
             fill: $blue-light;
+         }
+         @media screen and (max-width: 480px) {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            min-height: 18px;
          }
    }
 }
@@ -418,6 +462,9 @@ svg {
    .sub-title {
       padding-left: 12px;
       padding-bottom: 10px;
+      @media screen and (max-width: 480px) {
+         font-size: 16px;
+      }
    }
    .list {
       flex-direction: column;
@@ -447,6 +494,9 @@ svg {
                }
             }
          }
+         @media screen and (max-width: 480px) {
+            font-size: 12px;
+         }
       }
    }
 }
@@ -458,6 +508,9 @@ svg {
    padding-left: 46px;
    margin-bottom: 15px;
    color: $blue-light;
+   @media screen and (max-width: 480px) {
+      font-size: 14px;
+   }
    &::before {
       content: '';
       display: inline-block;
@@ -487,6 +540,13 @@ svg {
    width: 48%;
    min-width: 500px;
    padding: 0 10px;
+   @media screen and (max-width: 1024px) {
+      grid-area: content;
+      width: 100%;
+   }
+   @media screen and (max-width: 768px) {
+      min-width: auto;
+   }
 }
 .create-block {
    border: 1px solid rgb(221, 221, 221);
@@ -499,20 +559,36 @@ svg {
 .create-title {
    padding: 10px 15px;
    border-bottom: 1px solid rgb(221, 221, 221);
+   @media screen and (max-width: 375px) {
+      padding: 10px;
+      font-size: 16px;
+   }
 }
 
 .create-share {
    display: flex;
+   @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+   }
+   @media screen and (max-width: 480px) {
+      display: block;
+   }
 }
 
 .create-text {
    padding: 15px;
    background-color: $white;
+   @media screen and (max-width: 375px) {
+      padding: 15px 10px;
+   }
    .create-content {
       padding-bottom: 15px;
       border-bottom: 1px solid rgb(221, 221, 221);
       span {
          color: #333;
+         @media screen and (max-width: 480px) {
+            font-size: 14px;
+         }
       }
    }
    .create-share {
@@ -525,8 +601,11 @@ svg {
          border: 1px solid rgb(222, 222, 222);
          overflow: hidden;
          transition: all 0.2s ease-in;
-         &:last-child {
-            margin-right: 0;
+         @media screen and (max-width: 768px) {
+            margin-bottom: 5px;
+         }
+         @media screen and (max-width: 480px) {
+            display: inline-block;
          }
          &:hover {
             background-color: transparent;
@@ -535,24 +614,16 @@ svg {
             position: relative;
             font-size: 13px;
             color: #333;
-         }
-         &:last-child {
-            width: 34px;
-            border-radius: 50%;
-            span {
-               &::before {
-                  content: '...';
-                  position: absolute;
-                  top: -16px;
-                  left: -8px;
-                  font-size: 20px;
-               }
+            @media screen and (max-width: 480px) {
+               vertical-align: 2px;
             }
          }
       }
       .icon {
          width: 16px;
          height: 16px;
+         min-width: 16px;
+         min-height: 16px;
          margin-right: 8px;
          svg {
             fill: #4faaff;
@@ -564,7 +635,16 @@ svg {
 .icon {
       width: 60px;
       height: 60px;
+      min-width: 60px;
+      min-height: 60px;
       margin-right: 20px;
+      @media screen and (max-width: 480px) {
+         width: 40px;
+         height: 40px;
+         min-width: 40px;
+         min-height: 40px;
+         margin-right: 10px;
+      }
       .user-svg {
          fill: #999;
       }
@@ -582,6 +662,9 @@ svg {
 }
 .post-wrapper {
    padding: 15px;
+   @media screen and (max-width: 375px) {
+      padding: 15px 10px;
+   }
    .block-ico-text {
       padding-bottom: 20px;
       .more-info {
@@ -656,6 +739,9 @@ svg {
       line-height: 20px;
       color: #333;
       padding-bottom: 20px;
+      @media screen and (max-width: 480px) {
+         font-size: 13px;
+      }
       &:last-child {
          padding-bottom: 10px;
       }
@@ -670,6 +756,9 @@ svg {
          display: flex;
          align-items: center;
          padding: 15px 0 0;
+         @media screen and (max-width: 480px) {
+            font-size: 14px;
+         }
          &:last-child {
             position: relative;
             &:hover {
@@ -728,6 +817,8 @@ svg {
          .icon {
             width: 25px;
             height: 25px;
+            min-width: 25px;
+            min-height: 25px;
             margin-right: 8px;
             fill: #333;
             transition: all 0.2s ease-in;
@@ -752,6 +843,8 @@ svg {
       .like-icon {
          width: 15px;
          height: 15px;
+         min-width: 15px;
+         min-height: 15px;
          margin-right: 3px;
          &.active {
             fill: #4594df;
@@ -771,6 +864,12 @@ svg {
       font-weight: 700;
       color: $blue-light;
       padding-bottom: 5px;
+      @media screen and (max-width: 480px) {
+         font-size: 16px;
+      }
+      @media screen and (max-width: 375px) {
+         font-size: 14px;
+      }
    }
 }
 
@@ -782,6 +881,9 @@ svg {
       font-size: 13px;
       color: #999;
       margin-right: 10px;
+      @media screen and (max-width: 1024px) {
+         margin-right: 5px;
+      }
       &::after {
          content: '';
          display: inline-block;
@@ -791,11 +893,16 @@ svg {
          vertical-align: middle;
          margin-left: 10px;
          background-color: #999;
+         @media screen and (max-width: 1024px) {
+            margin-left: 5px;
+         }
       }
    }
    .icon {
       width: 15px;
       height: 15px;
+      min-width: 15px;
+      min-height: 15px;
       margin-right: 0;
       svg {
          fill: #999;
@@ -808,10 +915,26 @@ svg {
 .info-sidebar {
    width: 32%;
    padding: 0 10px;
+   @media screen and (max-width: 1024px) {
+      grid-area: header;
+      display: flex;
+      // align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+   }
    .stories{
       padding: 20px;
       background-color: $white;
       @extend .create-block;
+      @media screen and (max-width: 1024px) {
+         width: 35%;
+      }
+      &:nth-child(2) {
+         @media screen and (max-width: 1024px) {
+            align-self: flex-start;
+            width: 28%;
+         }
+      }
       &.visible-block {
          overflow: visible;
          .stories-header {
@@ -893,6 +1016,8 @@ svg {
          display: inline-block;
          width: 25px;
          height: 25px;
+         min-width: 25px;
+         min-height: 25px;
          margin-right: 10px;
          svg {
             fill: $blue-light;
