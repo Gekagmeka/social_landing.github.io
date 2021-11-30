@@ -918,18 +918,25 @@ svg {
    @media screen and (max-width: 1024px) {
       grid-area: header;
       display: flex;
-      // align-items: flex-start;
       justify-content: space-between;
       width: 100%;
    }
-   .stories{
+   @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+      position: relative;
+   }
+   .stories {
       padding: 20px;
       background-color: $white;
       @extend .create-block;
       @media screen and (max-width: 1024px) {
          width: 35%;
       }
-      &:nth-child(2) {
+      @media screen and (max-width: 768px) {
+         display: none;
+      }
+      
+      &:nth-child(3) {
          @media screen and (max-width: 1024px) {
             align-self: flex-start;
             width: 28%;
@@ -1088,6 +1095,57 @@ svg {
             font-weight: 700;
          }
 
+      }
+   }
+   .mobile-info {
+      display: none;
+      padding: 5px 10px;
+      margin: 5px 0;
+      border: 1px solid $gray;
+      border-radius: 5px;
+      background-color: $light-grey;
+      overflow: hidden;
+      @media screen and (max-width: 768px) {
+         display: block;
+         width: 100%;
+         position: relative;
+      }
+      span {
+         content: '';
+         position: absolute;
+         top: 50%;
+         right: 10px;
+         transform: translateY(-50%);
+         width: 10px;
+         height: 10px;
+         &::after,
+         &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background-color: rgb(0, 0, 0);
+            transition: all 0.8s ease-in;
+         }
+         &::after {
+            transform: translateX(4px) rotate(45deg);
+         }
+         &::before {
+            transform: translateX(4px) rotate(-45deg);
+         }
+      }
+      &.active {
+         span {
+            &::after {
+               transform: translateX(4px) rotate(135deg);
+            }
+            &::before {
+               transform: translateX(4px) rotate(-135deg);
+            }
+         }
       }
    }
 }

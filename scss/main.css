@@ -1225,6 +1225,14 @@ svg {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .info-sidebar {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative;
+  }
+}
+
 .info-sidebar .stories {
   padding: 20px;
   background-color: #fff;
@@ -1236,8 +1244,14 @@ svg {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .info-sidebar .stories {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1024px) {
-  .info-sidebar .stories:nth-child(2) {
+  .info-sidebar .stories:nth-child(3) {
     -ms-flex-item-align: start;
         align-self: flex-start;
     width: 28%;
@@ -1433,5 +1447,67 @@ svg {
   padding-bottom: 10px;
   font-size: 26px;
   font-weight: 700;
+}
+
+.info-sidebar .mobile-info {
+  display: none;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border: 1px solid #999;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .info-sidebar .mobile-info {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+}
+
+.info-sidebar .mobile-info span {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+}
+
+.info-sidebar .mobile-info span::after, .info-sidebar .mobile-info span::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-color: black;
+  -webkit-transition: all 0.8s ease-in;
+  transition: all 0.8s ease-in;
+}
+
+.info-sidebar .mobile-info span::after {
+  -webkit-transform: translateX(4px) rotate(45deg);
+          transform: translateX(4px) rotate(45deg);
+}
+
+.info-sidebar .mobile-info span::before {
+  -webkit-transform: translateX(4px) rotate(-45deg);
+          transform: translateX(4px) rotate(-45deg);
+}
+
+.info-sidebar .mobile-info.active span::after {
+  -webkit-transform: translateX(4px) rotate(135deg);
+          transform: translateX(4px) rotate(135deg);
+}
+
+.info-sidebar .mobile-info.active span::before {
+  -webkit-transform: translateX(4px) rotate(-135deg);
+          transform: translateX(4px) rotate(-135deg);
 }
 /*# sourceMappingURL=main.css.map */

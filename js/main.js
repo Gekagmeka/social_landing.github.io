@@ -7,9 +7,42 @@ let seeMore = document.querySelector('.see-more');
 let navGroup = document.querySelector('.nav-group');
 //let moreBtn = document.querySelector('.more-btn');
 let moreBtnAll = document.getElementsByClassName('more-btn');
+let mobileBlock = document.getElementById('mob-info');
+let storiesBlock = document.getElementsByClassName('stories');
 
 //will be found only the first element with this class
 let moreBtnShareList = document.querySelector('.more-btn + .share-list');
+
+mobileBlock.addEventListener('click', function(){
+   mobileBlock.classList.toggle('active');
+   //// we have many elements with class .stories - for this reason 
+   //// we need to sort these one's and add each of them class .active
+   // var elements = document.getElementsByClassName("stories");
+   // for (var i = 0; i < elements.length; i++) {
+   //    elements[i].classList.toggle("active");
+   // }
+});
+
+//show/hide mob block with animation
+$('.mobile-info').on('click', function(){
+	$('.mobile-info ~ .stories').slideToggle();
+});
+
+
+const minWidth = window.matchMedia("(min-width: 768px)");
+function checkWidth(e) {
+  // Check if the media query is true
+  if (e.matches) {
+   $('.mobile-info ~ .stories').css({'display' : 'block'});
+  } else {
+   $('.mobile-info ~ .stories').css({'display' : 'none'});
+ }
+}
+// Register event listener
+minWidth.addListener(checkWidth);
+// Initial check
+checkWidth(minWidth);
+
 
 burgerMenu.onclick = function() {
    mobileMenu.classList.add('active');
@@ -32,11 +65,6 @@ seeMore.onclick = function(e) {
    console.log(seeMore.nextElementSibling);
 }
 
-// moreBtn.onclick = function(e) {
-//    //document.addEventListener('click',e => console.log(e.target))
-//    moreBtnShareList.classList.toggle('active');
-//    e.preventDefault();
-// }
 
 //added  Listener to each mareBtnAll
 for (var i = 0; i < moreBtnAll.length; i++) {
@@ -63,31 +91,6 @@ function selectOptions() {
 // });
 
 
-
-//(don't work - because need olny one unique class or id of each of them - then it will work)
-// headerLinks.onclick = function() {
-//    mobileMenu.classList.remove('active');
-//    closedBody.classList.remove('close');
-//    return false; //because after closing burger-menu, we are transfered to the start of the page
-//    //or
-//     // e.preventDefault();
-// }
-
-
-
-//to avoid the transfering to the start of the page (don't work)
-// headerLinks.addEventListener('click', function(event) {
-//    event.preventDefault();
-// });
-
 // function stopDefAction(e) {
 //    e.preventDefault();
 // }
-
-
-// if (mobileMenu.classList.contains('active')) {
-//    closedBody.classList.add('close');
-//    }
-//    else {
-//       closedBody.classList.remove('close');
-//    }
