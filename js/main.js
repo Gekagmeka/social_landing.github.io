@@ -28,7 +28,8 @@ $('.mobile-info').on('click', function(){
 	$('.mobile-info ~ .stories').slideToggle();
 });
 
-
+// after switching mobile and desktop versions - our mobile block has it's common styles - display: none;
+// and on desktop version there are always right sidebar
 const minWidth = window.matchMedia("(min-width: 768px)");
 function checkWidth(e) {
   // Check if the media query is true

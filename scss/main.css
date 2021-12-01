@@ -160,6 +160,12 @@ svg {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .header .content {
+    height: 100px;
+  }
+}
+
 .burger-menu {
   display: none;
 }
@@ -509,6 +515,12 @@ svg {
 @media screen and (max-width: 768px) {
   .main {
     padding-top: 120px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main {
+    padding-top: 100px;
   }
 }
 
@@ -865,6 +877,15 @@ svg {
   margin-right: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .icon {
     width: 40px;
@@ -955,6 +976,25 @@ svg {
   transition: all 0.2s ease-in;
 }
 
+@media screen and (max-width: 1024px) {
+  .post-wrapper .block-ico-text .more-info .share-list {
+    left: -165px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .post-wrapper .block-ico-text .more-info .share-list {
+    min-width: 155px;
+    left: -120px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .post-wrapper .block-ico-text .more-info .share-list {
+    left: -125px;
+  }
+}
+
 .post-wrapper .block-ico-text .more-info .share-list .share-item a {
   position: relative;
   display: block;
@@ -964,7 +1004,14 @@ svg {
   color: #333;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  z-index: 2;
+}
+
+@media screen and (max-width: 640px) {
+  .post-wrapper .block-ico-text .more-info .share-list .share-item a {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+  }
 }
 
 .post-wrapper .block-ico-text .more-info .share-list .share-item a:hover {
@@ -983,6 +1030,24 @@ svg {
   border-top: 1px solid #ccc;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+@media screen and (max-width: 1024px) {
+  .post-wrapper .block-ico-text .more-info .share-list::after {
+    left: 170px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .post-wrapper .block-ico-text .more-info .share-list::after {
+    left: 125px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .post-wrapper .block-ico-text .more-info .share-list::after {
+    left: 130px;
+  }
 }
 
 .post-wrapper .post-text {
@@ -1051,6 +1116,44 @@ svg {
   transition: all 0.2s ease-in;
 }
 
+@media screen and (max-width: 1024px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list {
+    left: -53px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list {
+    left: -69px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list {
+    left: -96px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list {
+    min-width: 185px;
+    top: -165px;
+    left: -73px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list {
+    left: -13px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list {
+    left: -9px;
+  }
+}
+
 .post-wrapper .create-share .create-attach:last-child .share-list .share-item a {
   position: relative;
   display: block;
@@ -1060,6 +1163,14 @@ svg {
   color: #333;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
+}
+
+@media screen and (max-width: 640px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list .share-item a {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+  }
 }
 
 .post-wrapper .create-share .create-attach:last-child .share-list .share-item a:hover {
@@ -1079,6 +1190,42 @@ svg {
   background-color: #fff;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+@media screen and (max-width: 1024px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list::before {
+    left: 59px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list::before {
+    left: 75px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list::before {
+    left: 103px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list::before {
+    left: 79px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list::before {
+    left: 19px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .post-wrapper .create-share .create-attach:last-child .share-list::before {
+    left: 15px;
+  }
 }
 
 .post-wrapper .create-share .create-attach:hover {
@@ -1144,7 +1291,7 @@ svg {
   padding-bottom: 5px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .post-credentials .author-name {
     font-size: 16px;
   }
@@ -1247,6 +1394,24 @@ svg {
 @media screen and (max-width: 768px) {
   .info-sidebar .stories {
     display: none;
+    padding: 20px 10px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .info-sidebar .stories {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 50%;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .info-sidebar .stories {
+    width: 100%;
+    margin-bottom: 5px;
   }
 }
 
@@ -1255,6 +1420,18 @@ svg {
     -ms-flex-item-align: start;
         align-self: flex-start;
     width: 28%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .info-sidebar .stories:nth-child(3) {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
   }
 }
 
@@ -1277,6 +1454,28 @@ svg {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .info-sidebar .stories-header {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .info-sidebar .stories-header {
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .info-sidebar .stories-header h4 {
+    margin-bottom: 5px;
+  }
 }
 
 .info-sidebar .stories-header .clock-icon {
@@ -1310,6 +1509,14 @@ svg {
   transition: all 0.2s ease-in;
 }
 
+@media screen and (max-width: 1024px) {
+  .info-sidebar .stories-header .options-block {
+    top: -18px;
+    right: -15px;
+    padding: 1px 4px;
+  }
+}
+
 .info-sidebar .stories-header .options-block::after {
   content: '';
   display: inline-block;
@@ -1323,9 +1530,23 @@ svg {
   background-color: #000;
 }
 
+@media screen and (max-width: 1024px) {
+  .info-sidebar .stories-header .options-block::after {
+    width: 5px;
+    height: 5px;
+    bottom: -2px;
+  }
+}
+
 .info-sidebar .stories-header .options-block p {
   color: #fff;
   font-size: 13px;
+}
+
+@media screen and (max-width: 1024px) {
+  .info-sidebar .stories-header .options-block p {
+    font-size: 11px;
+  }
 }
 
 .info-sidebar .post-stories .time-left {
@@ -1339,6 +1560,12 @@ svg {
 
 .info-sidebar .post-stories .block-ico-text {
   margin-bottom: 15px;
+}
+
+@media screen and (max-width: 640px) {
+  .info-sidebar .post-stories .block-ico-text {
+    margin-bottom: 10px;
+  }
 }
 
 .info-sidebar .post-stories .block-ico-text:last-child {
@@ -1422,6 +1649,14 @@ svg {
   margin-top: 20px;
 }
 
+@media screen and (max-width: 640px) {
+  .info-sidebar .stories-content .buttons-block {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+  }
+}
+
 .info-sidebar .stories-content .buttons-block .button-info {
   width: 33.3333%;
   display: inline-block;
@@ -1429,6 +1664,12 @@ svg {
   border: 2px solid #e0e0e0;
   text-align: center;
   color: #333;
+}
+
+@media screen and (max-width: 640px) {
+  .info-sidebar .stories-content .buttons-block .button-info {
+    font-size: 14px;
+  }
 }
 
 .info-sidebar .stories-content .buttons-block .button-info.active {
@@ -1447,6 +1688,12 @@ svg {
   padding-bottom: 10px;
   font-size: 26px;
   font-weight: 700;
+}
+
+@media screen and (max-width: 640px) {
+  .info-sidebar .stories-content .sum-values .all-values {
+    padding-bottom: 5px;
+  }
 }
 
 .info-sidebar .mobile-info {
