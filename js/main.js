@@ -5,10 +5,10 @@ let closedBody = document.querySelector('body');
 let headerLinks = document.querySelectorAll('.menu .link');
 let seeMore = document.querySelector('.see-more');
 let navGroup = document.querySelector('.nav-group');
-//let moreBtn = document.querySelector('.more-btn');
 let moreBtnAll = document.getElementsByClassName('more-btn');
 let mobileBlock = document.getElementById('mob-info');
 let storiesBlock = document.getElementsByClassName('stories');
+//let moreBtn = document.querySelector('.more-btn');
 
 //will be found only the first element with this class
 let moreBtnShareList = document.querySelector('.more-btn + .share-list');
@@ -92,6 +92,55 @@ function selectOptions() {
 // });
 
 
-// function stopDefAction(e) {
-//    e.preventDefault();
-// }
+function stopDefAction(e) {
+   e.preventDefault();
+}
+
+
+//numbers
+let allLikes = 262;
+let allViews = 22;
+let allPosts = 11;
+let likes = 'likes';
+let views = 'views';
+let posts = 'posts';
+let sumBlock = document.querySelector('.sum-block');
+let sumText = document.querySelector('.sum-text');
+let btnInfo = document.querySelector('.button-info');
+
+// function ddd(){
+//    $(".button-info").on("click", function(){
+//        let myId = $(this).attr("id");
+//       console.log(myId);
+//    });
+// };
+
+
+//.button-info
+sumBlock.textContent = `${allLikes}`;
+sumText.textContent = ` ${likes} this week`;
+
+$('.button-info').on('click', function(e){
+   if ('.button-info.active') {
+      $('.button-info').removeClass('active');
+      $(this).toggleClass('active');
+   }
+   let myId = $(this).attr("id");
+
+   switch (myId) {
+      case ('info-likes'):
+         sumBlock.textContent = `${allLikes}`;
+         sumText.textContent = ` ${likes} this week`;
+         break;
+      case ('info-views'):
+         sumBlock.textContent = `${allViews}`;
+         sumText.textContent = ` ${views} this week`;
+         break;
+      case ('info-posts'):
+         sumBlock.textContent = `${allPosts}`;
+         sumText.textContent = ` ${posts} this week`;
+         break;
+   }
+   e.preventDefault();
+});
+

@@ -40,7 +40,7 @@ svg {
    top: 0;
    left: 0;
    width: 100%;
-   z-index: 1;
+   z-index: 2;
 
    &::before {
       content: '';
@@ -164,9 +164,6 @@ svg {
       left: -100%;
       width: 100%;
       height: 100vh;
-      // background-color: #7485a0;
-      // padding: 100px 0 0;
-      // box-shadow: 0 0 40px $blue;
       transition: all 0.3s ease-in;
 
       //for vertical scroll into the mobile menu
@@ -180,7 +177,7 @@ svg {
       left: 0;
       width: 80%;
       min-height: 100%;
-      background-color: #7485a0;
+      background-color: #174288;
       padding: 100px 0 0;
       box-shadow: 0 0 40px $blue;
    }
@@ -189,19 +186,7 @@ svg {
    &.active {
       @media screen and (max-width: 600px) {
          left: 0;
-         // width: 80%;
-         // height: 100%;
-         // background-color: #7485a0;
-         // padding: 100px 0 0;
-         // box-shadow: 0 0 40px $blue;
-         // position: fixed;
-         // top: 0;
       }
-      // .menu-wrapper {
-      //    @media screen and (max-width: 600px) {
-
-      //    }
-      // }
    }
 
    .close {
@@ -211,8 +196,6 @@ svg {
          position: absolute;
          top: 20px;
          right: 20px;
-         // border-radius: 10px;
-         // overflow: hidden;
       }
       &::before,
       &::after {
@@ -261,10 +244,6 @@ svg {
             width: 100%;
          }
 
-         // &:not(:first-child) {
-         //    margin-left: 60px;
-         // }
-
          &::after {
             content: '';
             display: inline-block;
@@ -289,8 +268,6 @@ svg {
             color: $white;
             margin-right: 20px;
             @media screen and (max-width: 600px) {
-               // display: block;
-               // width: 100%;
                margin: 0;
             }
             span {
@@ -369,9 +346,6 @@ svg {
 
 
 
-
-
-
 // main
 .main {
    background-color: $main-grey;
@@ -391,7 +365,6 @@ svg {
          display: grid;  
   grid-template-areas: "header header"  
                        "sidebar content";
-//   grid-template-columns: 30% 70%;
       }
    }
 }
@@ -480,14 +453,6 @@ svg {
          border-radius: 5px;
          @media screen and (max-width: 768px) {
             position: static;
-         }
-         &::after {
-            content: '...';
-            position: absolute;
-            top: 4px;
-            right: 10px;
-            font-size: 20px;
-            display: none;
          }
          @media screen and (min-width: 769px) {
             &:hover {
@@ -735,6 +700,7 @@ svg {
                      line-height: 1.5;
                      color: #333;
                      transition: all 0.2s ease-in;
+                     z-index: 1;
                      @media screen and (max-width: 640px) {
                         padding-right: 10px;
                         padding-left: 10px;
@@ -1190,7 +1156,6 @@ svg {
       }
       .buttons-block {
          padding-top: 20px;
-         padding-bottom: 20px;
          border-top: 1px solid $light-grey;
          margin-top: 20px;
          @media screen and (max-width: 640px) {
@@ -1205,6 +1170,7 @@ svg {
             border: 2px solid $light-grey;
             text-align: center;
             color: $hard-grey;
+            transition: all 0.3s ease-in;
             @media screen and (max-width: 640px) {
                font-size: 14px;
             }
@@ -1215,19 +1181,22 @@ svg {
             }
          }
       }
-      .sum-values {
+      .sum-block {
+         display: block;
+         text-align: center;
+         padding-top: 20px;
+         padding-bottom: 10px;
+         font-size: 26px;
+         font-weight: 700;
+         @media screen and (max-width: 640px) {
+            padding-bottom: 5px;
+         }
+      }
+      .sum-text {
+         display: block;
          text-align: center;
          font-size: 14px;
          color: $hard-grey;
-         .all-values {
-            padding-bottom: 10px;
-            font-size: 26px;
-            font-weight: 700;
-            @media screen and (max-width: 640px) {
-               padding-bottom: 5px;
-            }
-         }
-
       }
    }
    .mobile-info {

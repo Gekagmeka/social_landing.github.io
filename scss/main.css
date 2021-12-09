@@ -115,7 +115,7 @@ svg {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .header::before {
@@ -305,7 +305,7 @@ svg {
     left: 0;
     width: 80%;
     min-height: 100%;
-    background-color: #7485a0;
+    background-color: #174288;
     padding: 100px 0 0;
     -webkit-box-shadow: 0 0 40px #0a4ff1;
             box-shadow: 0 0 40px #0a4ff1;
@@ -663,15 +663,6 @@ svg {
   }
 }
 
-.nav-group .list .link::after {
-  content: '...';
-  position: absolute;
-  top: 4px;
-  right: 10px;
-  font-size: 20px;
-  display: none;
-}
-
 @media screen and (min-width: 769px) {
   .nav-group .list .link:hover {
     background-color: #fff;
@@ -1004,6 +995,7 @@ svg {
   color: #333;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
+  z-index: 1;
 }
 
 @media screen and (max-width: 640px) {
@@ -1644,7 +1636,6 @@ svg {
 
 .info-sidebar .stories-content .buttons-block {
   padding-top: 20px;
-  padding-bottom: 20px;
   border-top: 1px solid #e0e0e0;
   margin-top: 20px;
 }
@@ -1664,6 +1655,8 @@ svg {
   border: 2px solid #e0e0e0;
   text-align: center;
   color: #333;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 @media screen and (max-width: 640px) {
@@ -1678,22 +1671,26 @@ svg {
   color: #4594df;
 }
 
-.info-sidebar .stories-content .sum-values {
+.info-sidebar .stories-content .sum-block {
+  display: block;
   text-align: center;
-  font-size: 14px;
-  color: #333;
-}
-
-.info-sidebar .stories-content .sum-values .all-values {
+  padding-top: 20px;
   padding-bottom: 10px;
   font-size: 26px;
   font-weight: 700;
 }
 
 @media screen and (max-width: 640px) {
-  .info-sidebar .stories-content .sum-values .all-values {
+  .info-sidebar .stories-content .sum-block {
     padding-bottom: 5px;
   }
+}
+
+.info-sidebar .stories-content .sum-text {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
 }
 
 .info-sidebar .mobile-info {
