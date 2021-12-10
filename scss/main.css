@@ -83,6 +83,17 @@ body.close {
   overflow: hidden;
 }
 
+.body-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
 .container {
   width: 100%;
   max-width: 1230px;
@@ -508,6 +519,9 @@ svg {
 }
 
 .main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   background-color: #eee;
   padding-top: 80px;
 }
@@ -1753,5 +1767,15 @@ svg {
 .info-sidebar .mobile-info.active span::before {
   -webkit-transform: translateX(4px) rotate(-135deg);
           transform: translateX(4px) rotate(-135deg);
+}
+
+.footer {
+  background-color: #ddd;
+  padding: 15px 0;
+}
+
+.footer p {
+  font-size: 13px;
+  color: #333;
 }
 /*# sourceMappingURL=main.css.map */

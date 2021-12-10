@@ -13,6 +13,7 @@ let storiesBlock = document.getElementsByClassName('stories');
 //will be found only the first element with this class
 let moreBtnShareList = document.querySelector('.more-btn + .share-list');
 
+
 mobileBlock.addEventListener('click', function(){
    mobileBlock.classList.toggle('active');
    //// we have many elements with class .stories - for this reason 
@@ -23,10 +24,12 @@ mobileBlock.addEventListener('click', function(){
    // }
 });
 
+
 //show/hide mob block with animation
 $('.mobile-info').on('click', function(){
 	$('.mobile-info ~ .stories').slideToggle();
 });
+
 
 // after switching mobile and desktop versions - our mobile block has it's common styles - display: none;
 // and on desktop version there are always right sidebar
@@ -75,21 +78,7 @@ for (var i = 0; i < moreBtnAll.length; i++) {
 function selectOptions() {
    this.classList.toggle('active');// this в данном случае будет указывать на кликнутый элемент.
    console.log(this);
-   // moreBtnAll[i].classList.toggle('active');
 }
-
-// document.addEventListener('click', function(){
-//    moreBtnAll[i].classList.toggle('active');
-//    console.log(this);
-// });
-//see-more block jQuery
-// $(".see-more").on('click', function(e) {
-//    $(".see-more").toggleClass("active");
-//    $(".see-more + .nav-group").toggleClass("hide-block");
-// or
-//    $(".see-more").next().toggleClass("hide-block");
-//    e.preventDefault(); // to avoid transfering to the start after press see more link
-// });
 
 
 function stopDefAction(e) {

@@ -11,6 +11,12 @@ body {
    }
 }
 
+.body-wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
 .container {
    width: 100%;
    max-width: 1230px;
@@ -348,6 +354,7 @@ svg {
 
 // main
 .main {
+   flex-grow: 1;
    background-color: $main-grey;
    padding-top: 80px;
    @media screen and (max-width: 768px) {
@@ -1249,5 +1256,16 @@ svg {
             }
          }
       }
+   }
+}
+
+
+//footer
+.footer {
+   background-color: #ddd;
+   padding: 15px 0;
+   p {
+      font-size: 13px;
+      color: $hard-grey;
    }
 }
